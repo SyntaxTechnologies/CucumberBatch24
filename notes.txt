@@ -1,0 +1,41 @@
+support libraries -
+java
+selenium
+cucumber
+apache
+commons
+
+we have added all the dependencies in the pom.xml and reload the maven
+
+test - where we write the code to test the application
+
+under test - java and resources for technical and non technical respectively
+
+now we need to check, what packages and directories we need to work with cucumber
+
+--first we need feature file to write scenarios in BDD/gherkin - the extension of this file is .feature
+
+steps package - for all steps classes
+rules for step definition - we cannot have duplicate steps definition
+we cannot change the step def after creating it
+
+utils - for all the classes that will be used for the whole project
+
+background - all the steps which are common in one feature file for all scenarios till flow is same.
+for every feature file, background will be different
+
+
+
+class 2 -
+
+examples table - first hooks execute then background then scenario execute multiple times
+data table - first hook execute one time then background execute one time but step execute multiple times
+
+when your one test case executes against multiple sets of data
+to achieve data driven testing we have -
+examples table - hooks, background and scenario execute multiple times
+data table - for efficient execution
+excel file - for larger sets of data
+
+
+
