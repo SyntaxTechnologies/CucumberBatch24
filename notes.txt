@@ -25,9 +25,6 @@ background - all the steps which are common in one feature file for all scenario
 for every feature file, background will be different
 
 
-
-
-
 class 2 -
 
 examples table - first hooks execute then background then scenario execute multiple times
@@ -39,5 +36,22 @@ examples table - hooks, background and scenario execute multiple times
 data table - for efficient execution
 excel file - for larger sets of data
 
+Class 3 -
 
+characteristics of framework -
+framework should be scalable -
+framework should be mature enough
+no hard coded data should be passed
+data driven testing should be available
+with minimum efforts, code should be fixed (Low maintanence time)
+
+page object model design patter -
+for every single screen/page of the application, we create a page class in the framework and keep all the locators
+of this page in the class
+
+validation proof -
+Assertions - assertions are used to validate in 2 different ways
+
+existence of element check = login button is available or not
+value of the element exist
 

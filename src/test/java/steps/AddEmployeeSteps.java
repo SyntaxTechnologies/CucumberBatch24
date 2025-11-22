@@ -17,27 +17,27 @@ public class AddEmployeeSteps extends CommonMethods {
 
     @When("user clicks on Add Employee button")
     public void user_clicks_on_add_employee_button() {
-        WebElement addEmpOption = driver.findElement(By.xpath("(//*[text()='Add Employee'])[1]"));
-        click(addEmpOption);
+       // WebElement addEmpOption = driver.findElement(By.xpath("(//*[text()='Add Employee'])[1]"));
+        click(dashboardPage.addEmpOption);
     }
 
     @When("user enters firstname and middle name and lastname")
     public void user_enters_firstname_and_middle_name_and_lastname() {
-        WebElement firstNameloc = driver.findElement(By.xpath("//*[@name='firstName']"));
-        sendText("zara", firstNameloc);
+      //  WebElement firstNameloc = driver.findElement(By.xpath("//*[@name='firstName']"));
+        sendText("zara", addEmployeePage.firstNameloc);
 
-        WebElement middleNameloc = driver.findElement(By.xpath("//*[@name='middleName']"));
-        sendText("ms", middleNameloc);
+        //WebElement middleNameloc = driver.findElement(By.xpath("//*[@name='middleName']"));
+        sendText("ms",addEmployeePage.middleNameloc);
 
-        WebElement lastNameloc = driver.findElement(By.xpath("//*[@name='lastName']"));
-        sendText("jaafar", lastNameloc);
+       // WebElement lastNameloc = driver.findElement(By.xpath("//*[@name='lastName']"));
+        sendText("jaafar", addEmployeePage.lastNameloc);
 
     }
 
     @When("user clicks on save button")
     public void user_clicks_on_save_button() {
-        WebElement saveButton = driver.findElement(By.xpath("//*[@class='oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space']"));
-        click(saveButton);
+      //  WebElement saveButton = driver.findElement(By.xpath("//*[@class='oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space']"));
+        click(addEmployeePage.saveButton);
     }
 
     @Then("employee is added succesfully")

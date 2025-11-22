@@ -16,7 +16,7 @@ import utils.CommonMethods;
         dryRun = false,
         //tags = "@sprint1 or @sprint2"
         //tags = "@sprint1 and @sprint2"
-        tags = "@excel"
+        tags = "@sprint22"
 )
 
 public class RunnerClass extends CommonMethods {
