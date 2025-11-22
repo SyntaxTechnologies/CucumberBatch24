@@ -8,13 +8,13 @@ Feature: Search employees in the system
     When user clicks on PIM option
     And user clicks on employee list option
 
-  @employee @ivana @sprint2
+  @employee @ivana @sprint2 @regression
   Scenario: Search employee by id
     When user enters valid employee id
     And user clicks on search button
     Then user is able to see the employee details
 
-  @smoke @employee @sprint3 @nabil
+  @smoke @employee @sprint3 @nabil @regression
   Scenario: Search employee by name
     When user enters valid employee name
     And user clicks on search button

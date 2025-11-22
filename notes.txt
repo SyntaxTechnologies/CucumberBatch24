@@ -55,3 +55,8 @@ Assertions - assertions are used to validate in 2 different ways
 existence of element check = login button is available or not
 value of the element exist
 
+reports -
+multiple runner -
+failed runner -
+screenshots -
+plugins -

@@ -50,6 +50,7 @@ public class LoginSteps extends CommonMethods {
     @Then("user is able to login successfully")
     public void user_is_able_to_login_successfully() {
         Assert.assertTrue(dashboardPage.welcomeScreenLoc.isDisplayed());
+
         System.out.println("Test passed");
     }
 
@@ -71,5 +72,6 @@ public class LoginSteps extends CommonMethods {
         String expectedErrorMessage = loginPage.errorMessageLoc.getText();
         Assert.assertEquals("Invalid credentials",expectedErrorMessage);
         System.out.println("error message displayed");
+
     }
 }

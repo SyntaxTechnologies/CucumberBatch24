@@ -20,6 +20,7 @@ public class DashboardPage extends CommonMethods {
     public WebElement welcomeScreenLoc;
 
 
+
     public DashboardPage(){
         PageFactory.initElements(driver, this);
     }

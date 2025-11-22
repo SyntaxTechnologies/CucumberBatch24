@@ -1,9 +1,9 @@
 package runners;
 
+
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
-import utils.CommonMethods;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
@@ -16,13 +16,9 @@ import utils.CommonMethods;
         dryRun = false,
         //tags = "@sprint1 or @sprint2"
         //tags = "@sprint1 and @sprint2"
-        tags = "@sprint22",
+        tags = "@regression",
         //pretty - it prints all the steps in console, so that you can check which is failing with links
-        plugin = {"pretty","html:target/cucumber.html","json:target/cucumber.json",
-        "rerun:target/failed.txt"}
-        //rerun plugin creates the file having the path of only failed test cases
+        plugin = {"pretty","html:target/cucumber.html","json:target/cucumber.json"}
 )
-
-public class RunnerClass extends CommonMethods {
-
+public class RegressionRunner {
 }

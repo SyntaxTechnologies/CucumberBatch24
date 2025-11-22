@@ -7,7 +7,7 @@ Feature: Add employees in the system
     When user clicks on PIM option
     And user clicks on Add Employee button
 
-  @add
+  @add @smoke
   Scenario: Adding an employee normally
     When user enters firstname and middle name and lastname
     And user clicks on save button
@@ -19,7 +19,7 @@ Feature: Add employees in the system
     And user clicks on save button
     Then employee is added succesfully
 
-  @examples
+  @examples @regression
   Scenario Outline: Adding an employee using examples table
     When user enters "<firstname>" "<middlename>" and "<lastname>" field values
     And user clicks on save button
@@ -30,7 +30,7 @@ Feature: Add employees in the system
       |kevin      |ms          |adams     |
       |hamit     |ms          |ahmed      |
 
-    @datatable
+    @datatable @regression
     Scenario:Adding employees using data table
       When user enters firstname and middlename and lastname field values
       |firstname|middlename|lastname|
@@ -39,7 +39,7 @@ Feature: Add employees in the system
       |kevin      |ms          |adams     |
       |hamit     |ms          |ahmed      |
 
-    @excel
+    @excel @regression
     Scenario: Adding employees using excel file
       When user enters firstname and middlename and lastname field values using excel and verify them
 
