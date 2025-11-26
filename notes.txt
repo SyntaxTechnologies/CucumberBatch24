@@ -60,3 +60,14 @@ multiple runner -
 failed runner -
 screenshots -
 plugins -
+
+homework - validate the employee that has added is the same which you added
+
+plugins part -
+
+clean - it deletes target folder
+validate - it validates the code
+install - it installs all the required libraries
+verify - it verifies
+compile - it checks the validity
+test - test the code

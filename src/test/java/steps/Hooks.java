@@ -26,6 +26,9 @@ public class Hooks extends CommonMethods {
         }else{
             pic = takeScreenshot("passed/"+scenario.getName());
         }
+
+        //this line will attach the screenshot in the report
+        scenario.attach(pic,"image/png",scenario.getName());
         closeBrowser();
     }
 
