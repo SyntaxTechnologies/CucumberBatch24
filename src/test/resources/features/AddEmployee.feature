@@ -13,7 +13,7 @@ Feature: Add employees in the system
     And user clicks on save button
     Then employee is added succesfully
 
-  @param
+  @param @db1
   Scenario: Adding an employee using parameters
     When user enters "tariq" "ms" and "ahmed" values
     And user clicks on save button

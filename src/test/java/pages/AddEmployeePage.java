@@ -19,6 +19,10 @@ public class AddEmployeePage extends CommonMethods {
     @FindBy(xpath = "//*[@class='oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space']")
     public WebElement saveButton;
 
+
+    @FindBy(xpath = "(//input[@class='oxd-input oxd-input--active'])[2]")
+    public WebElement employeeID;
+
     public AddEmployeePage(){
         PageFactory.initElements(driver, this);
     }

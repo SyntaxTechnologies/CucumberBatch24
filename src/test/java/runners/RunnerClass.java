@@ -16,7 +16,7 @@ import utils.CommonMethods;
         dryRun = false,
         //tags = "@sprint1 or @sprint2"
         //tags = "@sprint1 and @sprint2"
-        tags = "@sprint22",
+        tags = "@db1",
         //pretty - it prints all the steps in console, so that you can check which is failing with links
         plugin = {"pretty","html:target/cucumber.html","json:target/cucumber.json",
         "rerun:target/failed.txt"}
