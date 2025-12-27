@@ -63,11 +63,21 @@ plugins -
 
 homework - validate the employee that has added is the same which you added
 
-plugins part -
+plugins part -Rest Assured library
+ rest web services - this web service allows data to be sent in JSON format
 
-clean - it deletes target folder
-validate - it validates the code
-install - it installs all the required libraries
-verify - it verifies
-compile - it checks the validity
-test - test the code
+ Rest assured is DSL (Domain Specific Language) which is used to test REST web services
+    it is open source library which is used to validate and verify the REST web services
+    it is used to validate the response of the API
+    rest assured follows BDD approach
+    it supports multiple languages like java, python, ruby etc
+    it supports multiple frameworks like testng, junit etc
+    BDD syntax - given, when, then, and, but
+    we can use rest assured with cucumber framework also
+
+    here is rest assured -
+    given - pre-condition - like headers, authentication, cookies, params etc (prepare the request)
+    when - action - like get, post, put, delete (to send the request/hit the endpoint)
+    then - validation - like status code, response time, body etc. (validate the response using assertions)
+
+First - we will see how API works alone and then we will integrate it with cucumber framework.
