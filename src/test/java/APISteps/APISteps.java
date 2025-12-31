@@ -7,6 +7,8 @@ import io.cucumber.java.en.When;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import utils.APIConstants;
+import utils.APIPayloadConstants;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
@@ -22,12 +24,12 @@ public class APISteps {
 
     @Given("a JWT is generated")
     public void a_jwt_is_generated() {
-        request = given().header("Content-Type", "application/json").
+        request = given().header(APIConstants.HEADER_CONTENT_TYPE_KEY, APIConstants.HEADER_CONTENT_TYPE_VALUE).
                 body("{\n" +
                         "  \"username\": \"hrm_user\",\n" +
                         "  \"password\": \"Hrm_user@123\"\n" +
                         "}");
-        response = request.when().post("api/v2/auth/login");
+        response = request.when().post(APIConstants.GENERATE_TOKEN_ENDPOINT);
 
         token = "Bearer " + response.jsonPath().getString("data.token");
     }
@@ -35,13 +37,13 @@ public class APISteps {
     @Given("a request is prepared to create employee API")
     public void a_request_is_prepared_to_create_employee_api() {
         //prepare the request
-         request = given().header("Authorization", token).
-                header("Content-Type", "application/json").
+         request = given().header(APIConstants.HEADER_AUTHORIZATION_KEY, token).
+                header(APIConstants.HEADER_CONTENT_TYPE_KEY, APIConstants.HEADER_CONTENT_TYPE_VALUE).
                 body("{\n" +
                         "  \"firstName\": \"John\",\n" +
                         "  \"lastName\": \"Doe\",\n" +
                         "  \"middleName\": \"Smith\",\n" +
-                        "  \"employeeId\": \"EMP169\"\n" +
+                        "  \"employeeId\": \"EMP148\"\n" +
                         "}");
 
     }
@@ -49,7 +51,7 @@ public class APISteps {
     @When("a POST call is made to create employee endpoint")
     public void a_post_call_is_made_to_create_employee_endpoint() {
         //hit the endpoint
-         response = request.when().post("api/v2/pim/employees");
+         response = request.when().post(APIConstants.CREATE_EMPLOYEE_ENDPOINT);
     }
 
     @Then("the status code for create employee API is {int}")
@@ -74,16 +76,15 @@ public class APISteps {
 
     @Given("a request is prepared to get employee API")
     public void a_request_is_prepared_to_get_employee_api() {
-         request = given().header("Authorization", token).
-                header("Content-Type", "application/json");
+         request = given().header(APIConstants.HEADER_AUTHORIZATION_KEY, token).
+                header(APIConstants.HEADER_CONTENT_TYPE_KEY, APIConstants.HEADER_CONTENT_TYPE_VALUE);
         //hit the endpoint
 
     }
 
     @When("a GET call is made to get employee endpoint")
     public void a_get_call_is_made_to_get_employee_endpoint() {
-        response = request.when().get("api/v2/pim/employees"
-        );
+        response = request.when().get(APIConstants.GET_EMPLOYEE_ENDPOINT);
 
     }
 
@@ -94,5 +95,32 @@ public class APISteps {
         response.prettyPrint();
     }
 
+    @Given("a request is prepared to update employee API")
+    public void a_request_is_prepared_to_update_employee_api() {
+        request = given().header(APIConstants.HEADER_AUTHORIZATION_KEY, token).
+                header(APIConstants.HEADER_CONTENT_TYPE_KEY, APIConstants.HEADER_CONTENT_TYPE_VALUE).
+                body("{\n" +
+                        "  \"firstName\": \"Tariq\",\n" +
+                        "  \"lastName\": \"goat\",\n" +
+                        "  \"middleName\": \"Alkinani\",\n" +
+                        "  \"employeeId\": \"EMP181\"\n" +
+                        "}");
     }
+    @When("a PUT call is made to update employee endpoint")
+    public void a_put_call_is_made_to_update_employee_endpoint() {
+        response = request.when().put(APIConstants.UPDATE_EMPLOYEE_ENDPOINT+"/"+empNumber);
+    }
+    @Then("the status code for update employee API is {int}")
+    public void the_status_code_for_update_employee_api_is(Integer int1) {
+        response.then().assertThat().statusCode(200);
+        response.prettyPrint();
+    }
+
+    @Given("a request is prepared to create employee API with parameterized payload")
+    public void a_request_is_prepared_to_create_employee_api_with_parameterized_payload() {
+        request = given().header(APIConstants.HEADER_AUTHORIZATION_KEY, token).
+                header(APIConstants.HEADER_CONTENT_TYPE_KEY, APIConstants.HEADER_CONTENT_TYPE_VALUE).
+                body(APIPayloadConstants.createEmployeePayload());
+    }
+}
 

@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
         glue = "APISteps",
         //when you set the value of dry run to true, it stops execution and scans all the step def
         //and provide missing step definition, to execute the test case, set the value to false
-        dryRun = false,
+        dryRun = true,
         //tags = "@sprint1 or @sprint2"
         //tags = "@sprint1 and @sprint2"
         tags = "@api2",
