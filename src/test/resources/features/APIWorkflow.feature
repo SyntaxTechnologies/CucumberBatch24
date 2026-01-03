@@ -28,3 +28,18 @@ Feature: API
     When a POST call is made to create employee endpoint
     Then the status code for create employee API is 201
     Then the empNumber is stored for future use
+
+
+  @api3
+  Scenario: Create an employee
+    Given a request is prepared to create employee API with json payload
+    When a POST call is made to create employee endpoint
+    Then the status code for create employee API is 201
+    Then the empNumber is stored for future use
+
+  @api4
+  Scenario: Create an employee using dynamic json payload
+    Given a request is prepared to create employee API with json payload by "John" and "Doe" and "Smith" and "EMP241"
+    When a POST call is made to create employee endpoint
+    Then the status code for create employee API is 201
+    Then the empNumber is stored for future use

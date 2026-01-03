@@ -122,5 +122,22 @@ public class APISteps {
                 header(APIConstants.HEADER_CONTENT_TYPE_KEY, APIConstants.HEADER_CONTENT_TYPE_VALUE).
                 body(APIPayloadConstants.createEmployeePayload());
     }
+
+    @Given("a request is prepared to create employee API with json payload")
+    public void a_request_is_prepared_to_create_employee_api_with_json_payload() {
+        request = given().header(APIConstants.HEADER_AUTHORIZATION_KEY, token).
+                header(APIConstants.HEADER_CONTENT_TYPE_KEY, APIConstants.HEADER_CONTENT_TYPE_VALUE).
+                body(APIPayloadConstants.createEmployeePayloadJson());
+    }
+
+    @Given("a request is prepared to create employee API with json payload by {string} and {string} and {string} and {string}")
+    public void a_request_is_prepared_to_create_employee_api_with_json_payload_by_and_and_and
+            (String firstname, String lastname, String middlename, String empid) {
+        request = given().header(APIConstants.HEADER_AUTHORIZATION_KEY, token).
+                header(APIConstants.HEADER_CONTENT_TYPE_KEY, APIConstants.HEADER_CONTENT_TYPE_VALUE).
+                body(APIPayloadConstants.createEmployeePayloadJsonDynamic
+                        (firstname,lastname,middlename,empid));
+    }
+
 }
 

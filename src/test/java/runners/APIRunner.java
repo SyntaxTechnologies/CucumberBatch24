@@ -13,10 +13,10 @@ import org.junit.runner.RunWith;
         glue = "APISteps",
         //when you set the value of dry run to true, it stops execution and scans all the step def
         //and provide missing step definition, to execute the test case, set the value to false
-        dryRun = true,
+        dryRun = false,
         //tags = "@sprint1 or @sprint2"
         //tags = "@sprint1 and @sprint2"
-        tags = "@api2",
+        tags = "@api4",
         //pretty - it prints all the steps in console, so that you can check which is failing with links
         plugin = {"pretty","html:target/cucumber.html","json:target/cucumber.json"}
 )
